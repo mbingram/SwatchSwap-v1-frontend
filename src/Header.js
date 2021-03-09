@@ -4,7 +4,9 @@ import logo from './swatch_logo.png'
 export default function Header() {
 
     return (
-        <img src={logo} alt="logo" id="logo" ></img>
+        <div className="header">
+            <img src={logo} alt="logo" id="logo" ></img>
+        </div>
     )
 
 }

@@ -8,7 +8,7 @@ export default function ColorsDiv({colors}) {
     })
 
     return (
-        <div>
+        <div className="colors-set">
             {displayColors()}
         </div>
     )

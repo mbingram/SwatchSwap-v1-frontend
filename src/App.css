@@ -1,12 +1,32 @@
 #logo {
-  width: 25%
+  width: 15%
+}
+
+h2 {
+  color: white;
+}
+
+.header {
+  background-color: #012525;
 }
 
 .card {
-  box-shadow: 0 0 25px 5px rgb(212, 212, 212);
-  width: 300px;
+  border: 1px solid white;
+  width: 250px;
   margin-bottom: 20px;
   margin-top: 20px;
-  height: max-content;
-  background-color: white;
+  height: 200px;
+  align-items: baseline;
+}
+
+.colors-set {
+  padding-inline-start: 0;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  flex-flow: row nowrap;
+  justify-content: center;
+  text-align: center;
+  list-style-type: none;
+  background-color: #2B3635;
 }

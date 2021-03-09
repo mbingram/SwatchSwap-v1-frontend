@@ -4,10 +4,12 @@ import ColorsDiv from './ColorsDiv'
 import Header from './Header'
 const baseURL = "http://colormind.io/api/"
 
+
 class App extends Component {
 
   state = {
-    colors: []
+    colors: [],
+    backgroundColor: []
   }
 
   componentDidMount(){
@@ -19,7 +21,6 @@ class App extends Component {
   })
     .then(response => response.json())
     .then(colors => {
-      console.log(colors.result)
       this.setState({ colors: colors.result })
       })
   };
