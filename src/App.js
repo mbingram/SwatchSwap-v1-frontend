@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import './App.css';
 import ColorsDiv from './ColorsDiv'
 import Header from './Header'
+import NavBar from './NavBar'
 import PremadeDiv from './PremadeDiv'
+import Divider from './Divider'
+
 const baseURL = "http://colormind.io/api/"
-const premadeURL = 'http://colormind.io/list/'
+const palleteSeeds = "http://localhost:3000/palletes"
 
 export default class App extends Component {
 
   state = {
     colors: [],
-    premadeColors: []
+    background: [],
+    premadePalletes: []
   }
 
-  reloadColors = () => {
+  loadColors = () => {
     fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify({
-        model: 'default'
+        model: 'default',
       })
     })
       .then(response => response.json())
@@ -26,30 +30,35 @@ export default class App extends Component {
         })
   };
 
-  premadeColors = () => {
-    fetch(premadeURL, {
-      method: 'POST',
-      body: JSON.stringify({
-        model: 'default'
-      })
-    })
+  premadePalletes = () => {
+    fetch(palleteSeeds)
       .then(response => response.json())
-      .then(swatches => {
-        this.setState({ premadeColors: swatches.result })
-        })
-  }
+      .then(palletes => {
+        palletes.forEach(pallete => {
+          console.log(pallete.hexcodes)
+          const splitUp = pallete.hexcodes.split(",")
+          this.setState({ premadePalletes: splitUp })
+        })})}
 
   componentDidMount(){
-    this.reloadColors()
-    this.premadeColors()
+    this.loadColors()
+    this.premadePalletes()
   };
+
+
+
 
   render(){
     return (
       <div className="App">
-        <Header reloadColors={this.reloadColors} />
-        <ColorsDiv colors={this.state.colors} />
-        {/* <PremadeDiv premadeColors={this.state.premadeColors}/> */}
+        <Header />
+        <NavBar
+          loadColors={this.loadColors}/>
+        <ColorsDiv
+          colors={this.state.colors} />
+        <Divider />
+        <PremadeDiv premadePalletes={this.state.premadePalletes} />
+
       </div>
     );
   }
