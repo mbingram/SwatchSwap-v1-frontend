@@ -10,6 +10,10 @@ a:hover {
   color: rgb(176, 196, 175);
 }
 
+a:hover cursor {
+  cursor: pointer;
+}
+
 .header {
   background-color: #2B3635;
   display: flex;
@@ -65,9 +69,11 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .random-button:hover {
 	background-color:#323563;
 }
+
 .random-button:active {
 	position:relative;
 	top:1px;
