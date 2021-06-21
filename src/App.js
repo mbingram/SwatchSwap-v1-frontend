@@ -45,9 +45,6 @@ export default class App extends Component {
     this.premadePalletes()
   };
 
-
-
-
   render(){
     return (
       <div className="App">

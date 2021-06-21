@@ -1,0 +1,6 @@
+{
+    "palettes": [
+        {"name": "Akira", "hex1": "C28B75", "hex2": "7A2F50", "hex3": "1E121F", "hex4": "4C4C49", "hex5": "869593"},
+        {"name": "Mao", "hex1": "D6E0C7", "hex2": "A3895E", "hex3": "BC7A42", "hex4": "AC3E31", "hex5": "1E4357"}
+    ]
+}
